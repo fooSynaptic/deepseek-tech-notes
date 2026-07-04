@@ -1,11 +1,13 @@
 # deepseek-tech-notes
 
+📖 **[在线阅读 · Read online（mdBook）](https://fooSynaptic.github.io/deepseek-tech-notes/)** — 公式 / 图示 / 引用块与本地 Preview 一致；GitHub 仓库内 `.md` 预览勿作对照。
+
 > **Smooth, deep notes on frontier DeepSeek tech** — bidirectional navigation from V1 through **V4** (DSA, MoE, DSpark, Engram, and beyond): formulas, walkthroughs, and infra patches in wiki + book form. Unofficial; not affiliated with DeepSeek.
 >
 > **丝滑阅读 × 深度拆解 × 前沿跟进** — 非官方 DeepSeek 技术笔记（V1→V4）：双向引用 wiki + 成书读本，机制、公式与推理 infra 逐级展开。
 
 > **Primary language: Chinese.** Most articles, the book layout, and deep-dive notes in this repo are written in **简体中文**, aimed at the **Chinese-speaking community**.  
-> **→ [中文导读（推荐阅读）](docs/README.md)**
+> **→ [中文导读 · 在线成书](https://fooSynaptic.github.io/deepseek-tech-notes/)**（推荐） · [源稿 docs/README.md](docs/README.md)**
 
 ---
 
@@ -35,9 +37,9 @@ This repo is built for **bidirectional navigation**: every article, deep-dive, a
 
 | | |
 |--|--|
-| **Chinese home (main)** | [docs/README.md](docs/README.md) |
+| **Online book（推荐）** | **[fooSynaptic.github.io/deepseek-tech-notes](https://fooSynaptic.github.io/deepseek-tech-notes/)** |
+| **Chinese home（源稿）** | [docs/README.md](docs/README.md) |
 | **Evolution hub** | [Version lineage overview](docs/reports/deepseek-version-lineage-20260625.md) — algorithm / infrastructure / MoE threads |
-| **Online book (mdBook)** | [fooSynaptic.github.io/deepseek-tech-notes](https://fooSynaptic.github.io/deepseek-tech-notes/) |
 | **Book mirror (repo)** | [《ds-技术报告》/01-总览/01-版本演进总览.md](《ds-技术报告》/01-总览/01-版本演进总览.md) |
 | **PNG figures** | [`png/`](png/) — raster exports of all SVG diagrams (images only) |
 

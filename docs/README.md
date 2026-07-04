@@ -4,7 +4,7 @@
 >
 > **Smooth, deep notes on frontier DeepSeek tech** — bidirectional navigation from V1 through **V4**: formulas, walkthroughs, and infra patches in wiki + book form. Unofficial; not affiliated with DeepSeek.
 
-> [← English homepage](../README.md)
+> [← English homepage](../README.md) · **[在线成书（mdBook）](https://fooSynaptic.github.io/deepseek-tech-notes/)**
 
 仓库 GitHub 首页为英文；**正文、成书读本与深度答疑以简体中文为主**，面向**中文技术社区**。
 
