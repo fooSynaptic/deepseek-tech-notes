@@ -1,8 +1,10 @@
 # deepseek-tech-notes · 中文导读
 
-> [← English homepage](../README.md)
+> **丝滑阅读 × 深度拆解 × 前沿跟进** — 非官方 DeepSeek 技术笔记（V1→V4）：双向引用 wiki + 成书读本，机制、公式与推理 infra（DSA、DSpark、Engram 等）逐级展开。**与 DeepSeek 官方无隶属关系**。
+>
+> **Smooth, deep notes on frontier DeepSeek tech** — bidirectional navigation from V1 through **V4**: formulas, walkthroughs, and infra patches in wiki + book form. Unofficial; not affiliated with DeepSeek.
 
-DeepSeek 模型系列（V1 → V4）的**非官方**技术拆解与笔记。**与 DeepSeek 官方无隶属关系**；论文与代码以官方发布为准。
+> [← English homepage](../README.md)
 
 仓库 GitHub 首页为英文；**正文、成书读本与深度答疑以简体中文为主**，面向**中文技术社区**。
 

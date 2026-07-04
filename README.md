@@ -1,6 +1,8 @@
 # deepseek-tech-notes
 
-Unofficial DeepSeek technical notes — from the earliest public tech reports through **V4**, plus V4-era inference work such as **DSpark**. Not affiliated with DeepSeek.
+> **Smooth, deep notes on frontier DeepSeek tech** — bidirectional navigation from V1 through **V4** (DSA, MoE, DSpark, Engram, and beyond): formulas, walkthroughs, and infra patches in wiki + book form. Unofficial; not affiliated with DeepSeek.
+>
+> **丝滑阅读 × 深度拆解 × 前沿跟进** — 非官方 DeepSeek 技术笔记（V1→V4）：双向引用 wiki + 成书读本，机制、公式与推理 infra 逐级展开。
 
 > **Primary language: Chinese.** Most articles, the book layout, and deep-dive notes in this repo are written in **简体中文**, aimed at the **Chinese-speaking community**.  
 > **→ [中文导读（推荐阅读）](docs/README.md)**
