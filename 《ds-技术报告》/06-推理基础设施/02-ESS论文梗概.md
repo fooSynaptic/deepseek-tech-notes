@@ -4,6 +4,13 @@
 > **全文**：[arXiv:2512.10576](https://arxiv.org/abs/2512.10576) · Chen et al., 2025（百度 Baige AI）
 > **对象模型**：DeepSeek-V3.2-Exp · 框架：SGLang · 场景：**PD 分离** Decode 阶段
 
+## 核心结论摘要
+
+- ESS 论文核心：Latent-Cache 分层存储 + prefetch 隐藏 PCIe 延迟。
+- 优化对象是 DeepSeek-V3.2-Exp 的 MLA latent 格式，非 DSA 发明方。
+- 与 IndexCache（index 复用）和 DSA（稀疏选 k）可组合。
+- 适合长上下文、内存受限的推理部署场景。
+
 ---
 
 ## 一句话

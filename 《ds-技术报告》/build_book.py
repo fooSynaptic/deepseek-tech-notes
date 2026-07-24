@@ -62,7 +62,7 @@ CHAPTER_MAP: dict[str, str] = {
     "docs/reports/zhihu-jiangzijun-dspark-highlights-20260627.md": "08-外部解读/03-酱紫君DSpark阅读笔记.md",
     "docs/reports/deepseek-doc-series-audit-20260627.md": "09-附录/02-文档系列结构审查.md",
     "docs/WIKI-INDEX.md": "09-附录/01-开发索引.md",
-    "docs/material/papers/deepseek-r1/training-pipeline.md": "03-后训练与R1/05-R1训练管线.md",
+    "docs/material/papers/deepseek-r1/training-pipeline.md": "03-后训练与R1/05-R1训练pipeline.md",
     "docs/material/papers/engram/engram-series-overview.md": "07-Engram/02-Engram系列导读.md",
     "docs/papers/thinking-with-visual-primitives-highlights.md": "09-附录/03-Visual-Primitives论文要点.md",
 }
@@ -303,7 +303,7 @@ READING_ORDER: list[str] = [
     "03-后训练与R1/02-R1.md",
     "03-后训练与R1/03-RL笔记索引.md",
     "03-后训练与R1/04-GRPO长程局限.md",
-    "03-后训练与R1/05-R1训练管线.md",
+    "03-后训练与R1/05-R1训练pipeline.md",
     "04-版本代际/00-V1-LLM.md",
     "04-版本代际/00-V1-BBPE词表与Tokenizer.md",
     "04-版本代际/00-V2-MoE与MLA.md",
@@ -811,7 +811,7 @@ def write_master_toc() -> None:
 | [02 R1](./03-后训练与R1/02-R1.md) | V3-Base + RLVR |
 | [03 RL 笔记索引](./03-后训练与R1/03-RL笔记索引.md) | 后训练延伸阅读 |
 | [04 GRPO 长程局限](./03-后训练与R1/04-GRPO长程局限.md) | 社区讨论附录 |
-| [05 R1 训练管线](./03-后训练与R1/05-R1训练管线.md) | 四阶段 Dev-1→R1（参考材料副本） |
+| [05 R1 训练 pipeline](./03-后训练与R1/05-R1训练pipeline.md) | 四阶段 Dev-1→R1（参考材料副本） |
 
 ### 04 版本代际
 
@@ -872,7 +872,7 @@ def write_master_toc() -> None:
 |----|------|
 | [01 开发索引](./09-附录/01-开发索引.md) | 源路径与构建（**非阅读入口**） |
 | [02 文档系列结构审查](./09-附录/02-文档系列结构审查.md) | 双向引用、导航、SVG 复用审计 |
-| [material/](./09-附录/material/README.md) | 补充参考材料（本仓内）（R1 管线、Engram 导读、V1 Wiki 等） |
+| [material/](./09-附录/material/README.md) | 补充参考材料（本仓内）（R1 pipeline、Engram 导读、V1 Wiki 等） |
 
 ---
 

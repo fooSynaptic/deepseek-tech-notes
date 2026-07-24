@@ -3,6 +3,13 @@
 > [← 中文导读](../00-前言/02-中文导读.md) · [← 仓库首页（EN）](https://github.com/fooSynaptic/deepseek-mechanism-atlas) · [← 演进总览 §2](../01-总览/01-版本演进总览.md#2-版本时间线与关系) · [← R1 梗概](02-R1.md) · [Raschka §RLVR/GRPO](../08-外部解读/01-Raschka要点速读.md#rlvr--grpo-要点326)
 > **论文**：[DeepSeek-R1 arXiv:2501.12948](https://arxiv.org/abs/2501.12948)
 
+## 核心结论摘要
+
+- **RLVR**（Reinforcement Learning with Verifiable Rewards）用规则/验证器给奖励，无需神经 RM。
+- **GRPO** 在组内做相对 advantage 优化，去掉 critic 网络。
+- R1 后训练核心；适合数学、代码等可自动判对错任务。
+- 与 PPO+神经 RM 的 RLHF 路线形成对照（见 GRPO vs PPO 图）。
+
 ---
 
 ## 一句话
@@ -56,7 +63,7 @@
 | **R1-Zero** | V3-Base → **纯 GRPO + RLVR**（无 SFT 冷启动） | 推理能力 **自发涌现**（长度增长、自反思）；可读性差 |
 | **R1** | 冷启动 SFT → RL → 拒绝采样 SFT → RL | 在 R1-Zero 能力上补 **可读性、通用任务、安全** |
 
-详见 [R1 四阶段训练管线](05-R1训练管线.md)（含 Dev-1→R1 与 Table 3 指标）。
+详见 [R1 四阶段训练 pipeline](05-R1训练pipeline.md)（含 Dev-1→R1 与 Table 3 指标）。
 
 ---
 
@@ -66,7 +73,7 @@
 |------|-------------|
 | **V3** | Base；**无** RLVR |
 | **R1** | **RLVR + GRPO** 主路径；架构 **同 V3** |
-| **V3.1 / Terminus** | Hybrid 对话；训练管线不同，非 R1 专用推理模型 |
+| **V3.1 / Terminus** | Hybrid 对话；训练 pipeline 不同，非 R1 专用推理模型 |
 | **V3.2** | 继承 R1 系 GRPO 经验 + **生成式 RM**（开放域）+ DeepSeekMath V2 过程奖励；[Raschka 对比](../08-外部解读/01-Raschka要点速读.md#rlvr--grpo-要点326) |
 
 <img src="figures/rlvr-posttrain-branch.svg" alt="V3-Base 后训练分叉：R1 专用推理 vs V3.1 Hybrid vs V3.2" width="920"/>
@@ -86,7 +93,7 @@ RLVR 只改 **后训练**（采样、奖励、策略梯度），不动 MLA / MoE
 | 资源 | 说明 |
 |------|------|
 | [DeepSeek-R1](02-R1.md) | R1 一页纸梗概 |
-| [DeepSeek-R1 训练 Pipeline](05-R1训练管线.md) | 四阶段 + R1-Zero 详解 |
+| [DeepSeek-R1 训练 Pipeline](05-R1训练pipeline.md) | 四阶段 + R1-Zero 详解 |
 | [Raschka 全文解析](../08-外部解读/02-Raschka全文解析.md) §3.2 | RLVR vs PPO vs GRPO 对照表 |
 | [GRPO 长程任务局限](04-GRPO长程局限.md) | 社区讨论：GRPO 与长程任务局限 |
 

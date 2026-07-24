@@ -63,7 +63,7 @@
 | **R1-Zero** | V3-Base → **纯 GRPO + RLVR**（无 SFT 冷启动） | 推理能力 **自发涌现**（长度增长、自反思）；可读性差 |
 | **R1** | 冷启动 SFT → RL → 拒绝采样 SFT → RL | 在 R1-Zero 能力上补 **可读性、通用任务、安全** |
 
-详见 [R1 四阶段训练管线](../material/papers/deepseek-r1/training-pipeline.md)（含 Dev-1→R1 与 Table 3 指标）。
+详见 [R1 四阶段训练 pipeline](../material/papers/deepseek-r1/training-pipeline.md)（含 Dev-1→R1 与 Table 3 指标）。
 
 ---
 
@@ -73,7 +73,7 @@
 |------|-------------|
 | **V3** | Base；**无** RLVR |
 | **R1** | **RLVR + GRPO** 主路径；架构 **同 V3** |
-| **V3.1 / Terminus** | Hybrid 对话；训练管线不同，非 R1 专用推理模型 |
+| **V3.1 / Terminus** | Hybrid 对话；训练 pipeline 不同，非 R1 专用推理模型 |
 | **V3.2** | 继承 R1 系 GRPO 经验 + **生成式 RM**（开放域）+ DeepSeekMath V2 过程奖励；[Raschka 对比](../reports/raschka-technical-deepseek-v3-v32-highlights.md#rlvr--grpo-要点326) |
 
 <img src="../figures/rl/rlvr-posttrain-branch.svg" alt="V3-Base 后训练分叉：R1 专用推理 vs V3.1 Hybrid vs V3.2" width="920"/>

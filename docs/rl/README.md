@@ -6,5 +6,5 @@
 |------|------|
 | [**RLVR 详解**](../versions/rlvr.md) | 可验证奖励强化学习；R1 的 GRPO + 规则奖励 |
 | [**R1 梗概**](../versions/r1.md) | V3-Base + RLVR，架构不变 |
-| [R1 训练管线](../material/papers/deepseek-r1/training-pipeline.md) | 四阶段 Dev-1→R1、R1-Zero |
+| [R1 训练 pipeline](../material/papers/deepseek-r1/training-pipeline.md) | 四阶段 Dev-1→R1、R1-Zero |
 | [GRPO 长程任务局限](./optimize.md) | 社区长文：GRPO 与长程任务局限 |

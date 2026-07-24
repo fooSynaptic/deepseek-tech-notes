@@ -4,6 +4,13 @@
 > **论文**：[ESS arXiv:2512.10576](https://arxiv.org/abs/2512.10576) — *An Offload-Centric Latent-Cache Management Architecture for DeepSeek-V3.2-Exp*（Chen et al., 2025）
 > **论文梗概**：[ESS 论文梗概](02-ESS论文梗概.md)
 
+## 核心结论摘要
+
+- **ESS** 将 MLA **Latent-Cache** offload 到 CPU，扩展有效 KV 容量。
+- 百度百舸针对 DeepSeek-V3.2 的 infra 方案，**与 DSA 算法正交**。
+- 与 V4 异构 KV / HiSparse 是不同代际的 offload 设计。
+- 论文梗概见 [ess-paper-highlights](02-ESS论文梗概.md)。
+
 ---
 
 ## 一句话

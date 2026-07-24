@@ -6,11 +6,18 @@
 
 **本文档**聚合 DeepSeek 系列 **投机解码（speculative decoding）** 与 **DSpark** 全部材料：通用循环、V3/V4 **MTP**、外挂 draft 自测、生产 **MTP-1** 基线、**DSpark** 机制与线上数据。演进总览 / V3 / V4 / 基础设施线 **只保留链接，细节以本文为准**。
 
+## 核心结论摘要
+
+- 投机解码把 **k 次搬大模型权重**压成 **1 次** target 前向 + 便宜 draft。
+- V3 **MTP** 链可做 draft；V4 生产侧 **DSpark** 为半自回归 draft + 置信度调度验证。
+- 与 HiSparse **正交**，可叠加提升 decode 吞吐。
+- 开源参考：[DeepSpec](https://github.com/deepseek-ai/DeepSpec)。
+
 ---
 
 ## 1. 投机解码：为何能加速推理
 
-> **场景**：单流（batch=1）、自回归 decode。下文以 **gpt2-small draft + gpt2-xl target** 为例说明通用机制；DeepSeek 路线见 §2，自测数据见 §3。
+> **场景**：batch=1、自回归 decode。下文以 **gpt2-small draft + gpt2-xl target** 为例说明通用机制；DeepSeek 路线见 §2。
 
 ### 1.1 瓶颈：每 token 搬一遍大模型权重
 
@@ -121,39 +128,10 @@ $$
 
 V4 Flash / Pro **预览引擎**在 DSpark 上线前，生产环境采用 **MTP-1**：基于 MTP 的 **单 token 推测解码**基线（每轮 propose/verify 粒度为 1）。**DSpark** 相对 **MTP-1** 报告线上增益（§8），不是相对「无投机纯自回归」。
 
----
-
-## 3. 外挂 draft 自测
-
-> **性质**：本仓库 **2026-06 自测**（vLLM 0.8.5，1000 条样本，单卡 L20）。**非** DeepSeek MTP 官方数据，**非** DSpark。
-
-| 项 | 值 |
-|----|-----|
-| 基线 | Qwen3-4B-Instruct **nospec** |
-| 投机 | 4B target + **0.6B draft** |
-| 基线 RT | **459 ms** / 条 |
-
-| 方法 | mean RT | **加速比** |
-|------|---------|--------------------------|
-| 4B nospec（基线） | 459 ms | **1.00×** |
-| vLLM ngram / PLD（无 draft） | 369 ms | **1.99×** |
-| Prefix cache + nospec | 454 ms | **1.61×** |
-| **Draft 投机（4B + 0.6B）** | 303 ms | **2.41×** |
-| Prefix cache + draft | 298 ms | **2.46×** |
-| Draft + target **FP8** | **256 ms** | **2.86×** |
-| Draft + target INT8 离线 | 272 ms | **2.69×** |
-| 手写 vanilla draft PoC | 1432 ms | **0.51×** |
-
-**读法**：
-
-- 接受率与引擎成熟时，speculative decoding 相对单路 decode 可达 **约 2.4–2.9×** 延迟收益 → 可作为 **MTP 原生投机** 的工程量级参照，**不替代**官方 MTP 吞吐数据。
-- draft 质量差时（PoC **0.51×**），同属 speculative decoding 也会 **慢于基线**；MTP 的价值之一是把 draft 与主模型 **绑在同一训练目标**。
-
----
 
 > **接受率参照**：[ESS 论文梗概](02-ESS论文梗概.md) 的 **MTP-Accept-Ratio**（如 1.7）描述 MTP 投机链路上 **每轮平均接受长度** 的量级，可与下文各草稿范式的块长、接受率对照阅读。
 
-## 4. 草稿范式总览
+## 3. 草稿范式总览
 
 每轮投机：草稿模型 $M_q$ 一次提出 $K$ 个候选，目标模型 $M_p$ 用时间 $\tau_p$ 做 **1 次**验证；草稿侧总耗时约为 $K \times \tau_q$（$\tau_q$ 为与块长相关的单步 draft 代价，自回归路线下 $\tau_q$ 随 $K$ **线性累积**）。设本轮 **平均接受长度**为 $\mathbb{E}[N_{\mathrm{acc}}]$（$0 \le \mathbb{E}[N_{\mathrm{acc}}] \le K$），相对「每 token 各跑 1 次 $\tau_p$」的粗算加速比为：
 
@@ -183,9 +161,9 @@ $$
 
 ---
 
-## 5. DSpark 概述
+## 4. DSpark 概述
 
-**DSpark**：面向 **V4-Flash / V4-Pro 预览引擎** 高并发 decode。用 **半自回归草稿** + **置信度调度验证**，相对生产基线 **MTP-1**，在 **同等吞吐量** 下单用户生成速度 **+57%–85%**（报道区间 **60%–85%**）。论文、训练代码、检查点：[DeepSpec](https://github.com/deepseek-ai/DeepSpec)。
+**DSpark**：面向 **V4-Flash / V4-Pro 预览引擎** 高并发 decode。用 **半自回归草稿** + **置信度调度验证**，相对生产基线 **MTP-1**，在 **同等吞吐量** 下单用户生成速度 **+57%–85%**（官方claim区间 **60%–85%**）。论文、训练代码、检查点：[DeepSpec](https://github.com/deepseek-ai/DeepSpec)。
 
 <img src="figures/dspark-speculative.svg" alt="DSpark：半自回归 draft + 置信度调度验证；与 Eagle3、DFlash、MTP-1 对照" width="920"/>
 
@@ -277,7 +255,7 @@ $$
 
 ## 9. 训练与在线引擎
 
-> **范畴**：**DSpark 线上推理**（§8、§10）不改 V4 基座权重，是纯 decode 加速栈。**本节「训练」**指 [DeepSpec](https://github.com/deepseek-ai/DeepSpec) 里 **外挂 draft 模块**（DSpark / DFlash / Eagle3）的 **训练与蒸馏管线**；**「在线引擎」**指该 draft 接入 V4 预览引擎后的调度与 kernel 集成。二者都不是 V3/V4 **主模型预训练**。
+> **范畴**：**DSpark 线上推理**（§8、§10）不改 V4 基座权重，是纯 decode 加速栈。**本节「训练」**指 [DeepSpec](https://github.com/deepseek-ai/DeepSpec) 里 **外挂 draft 模块**（DSpark / DFlash / Eagle3）的 **训练与蒸馏 pipeline**；**「在线引擎」**指该 draft 接入 V4 预览引擎后的调度与 kernel 集成。二者都不是 V3/V4 **主模型预训练**。
 
 > **答疑**：[酱紫君解读：draft 训练 vs 主模型 fine-tune](../08-外部解读/03-酱紫君DSpark阅读笔记.md#deepspec-draft-训练-vs-主模型-fine-tune)
 

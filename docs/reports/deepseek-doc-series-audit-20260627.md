@@ -52,7 +52,7 @@
 
 ### 3.2 反向引用
 
-演进总览 §3 各版本节已链到对应梗概 / 专文（含 [FP8 动态量化 §3.3](../versions/v3-fp8-dynamic-quantization.md)）。§7 专题表链 Engram / R1 管线等。
+演进总览 §3 各版本节已链到对应梗概 / 专文（含 [FP8 动态量化 §3.3](../versions/v3-fp8-dynamic-quantization.md)）。§7 专题表链 Engram / R1 pipeline 等。
 
 **建议**：§7 可增补 DSA 系列、[ESS 概念](../versions/ess-latent-cache-offload.md)、[Index Share](../versions/index-share.md) 一行，与三线导读 §5 反向表完全对称。
 
@@ -65,7 +65,7 @@
 | FP8 训练量化 | [V3 FP8 动态量化](../versions/v3-fp8-dynamic-quantization.md) | [v3.md §附 FP8](../versions/v3.md) 同图同链 | [fp8-partial-sum-drift.md](../versions/qa/fp8-partial-sum-drift.md)；[fp8-mma-term.md](../versions/qa/fp8-mma-term.md) |
 | GRPO vs PPO | [rlvr.md#grpo](../versions/rlvr.md) | 演进总览 §3.4 同图 | — |
 | MTP / 投机 | [v3.md §三](../versions/v3.md) | [spec-decode 报告](./spec-decode-draft-acceleration-20260604.md) 复用 `mtp-speculative.svg` | — |
-| DSA 管线 | [DSA 逻辑详解](../dsa/dsa-logic.md) | 梗概 / Raschka 链同一 `dsa-pipeline.svg` | — |
+| DSA pipeline | [DSA 逻辑详解](../dsa/dsa-logic.md) | 梗概 / Raschka 链同一 `dsa-pipeline.svg` | — |
 | ESS 双 Cache | [ESS Latent offload](../versions/ess-latent-cache-offload.md) | DSA 系列 / Lightning Indexer **同一路径** | [h2d-d2h-pcie-transfer.md](../versions/qa/h2d-d2h-pcie-transfer.md) |
 | V1 译文 | **已并入** [DeepSeek-LLM V1](../versions/v1.md) | stub 页仅重定向 | — |
 

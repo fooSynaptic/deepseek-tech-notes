@@ -4,6 +4,13 @@
 > **部署参考**：[Together.ai — Serving DeepSeek-V4](https://www.together.ai/blog/serving-deepseek-v4-why-million-token-context-is-an-inference-systems-problem)（2026-05，HGX B200 bring-up）
 > **演进总览 §5.3** 只保留梗概；**HiSparse 机制与数据以本文为准**。
 
+## 核心结论摘要
+
+- **HiSparse** 将 inactive CSA 块 **CPU offload**，约 **3× KV 容量**。
+- 与 DSpark 投机解码 **正交**，可叠加。
+- 针对 V4 异构压缩 cache，不同于 V3.2 ESS 的 latent offload。
+- 属于 V4 基础设施线 ⑤ 节点。
+
 ---
 
 ## 一句话

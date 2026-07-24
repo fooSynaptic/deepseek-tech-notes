@@ -7,7 +7,7 @@
 | 文档 | 类型 | 说明 |
 |------|------|------|
 | [V1→V3 前代演进](./deepseek-v1-to-v3-lineage.md) | 本地总览 | **V1 → V2 → V3** 前代演进 |
-| [DeepSeek-LLM V1](../versions/v1.md) | **精读** | DeepSeek-LLM V1 完整中文译文（2401.02954；Figure 2–5 / Table 3–4） |
+| [DeepSeek-LLM V1](../versions/v1.md) | **精读** | DeepSeek-LLM V1 机制总结（2401.02954；Figure 2–5 / Table 3–4） |
 | [版本演进总览](./deepseek-version-lineage-20260625.md) | 本地总览 | 全系列 V1→V4 算法线 + infra 线 |
 | [算法线导读](./deepseek-algorithm-line.md) | **算法线导读** | MLA → DSA → CSA/HCA + mHC 专题 hub |
 | [基础设施线导读](./deepseek-infra-line.md) | **基础设施线导读** | MLA KV → 异构 Cache → Index Share → ESS → V4 HiSparse |

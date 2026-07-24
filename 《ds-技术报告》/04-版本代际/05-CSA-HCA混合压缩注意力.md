@@ -3,6 +3,13 @@
 > [← 中文导读](../00-前言/02-中文导读.md) · [← 仓库首页（EN）](https://github.com/fooSynaptic/deepseek-mechanism-atlas) · [← 演进总览 §3.7](../01-总览/01-版本演进总览.md#37-deepseek-v4) · [← 算法线导读](../01-总览/05-算法线导读.md) · [← 基础设施线导读](../01-总览/06-基础设施线导读.md) · [V4 梗概](03-V4.md) · [上游 DSA](../05-DSA稀疏注意力/02-DSA梗概.md) · [上游 MLA](../02-基座架构/02-MLA低秩注意力.md) · [并列 mHC](04-mHC流形约束超连接.md) · [Lightning Indexer 详解](../05-DSA稀疏注意力/04-Lightning-Indexer详解.md)
 > **论文**：[DeepSeek-V4 arXiv:2606.19348](https://arxiv.org/abs/2606.19348)
 
+## 核心结论摘要
+
+- **CSA** 4:1 稀疏压缩 + top-k；**HCA** 128:1 dense 压缩。
+- V4 算法线核心：混合两种压缩注意力应对 1M context。
+- 配合异构 KV layout、SWA、Indexer、Tail buffer。
+- 上游继承 DSA indexer 思想，下游衔接 V4 KV / HiSparse。
+
 ---
 
 ## 一句话

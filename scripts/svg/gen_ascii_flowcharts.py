@@ -190,7 +190,7 @@ def gen_v1_v3_capability_timeline() -> None:
 
 def gen_r1_pipeline() -> None:
     w, h = 920, 200
-    s = txt(460, 22, "DeepSeek-R1 训练管线分叉", "t")
+    s = txt(460, 22, "DeepSeek-R1 训练 pipeline 分叉", "t")
     s += node(160, 88, 180, 48, "DeepSeek-V3 Base", fill="#eef4fc", stroke="#4A90D9")
     s += polyline([(250, 88), (340, 88), (340, 58), (620, 58), (620, 66)], "arr-g")
     s += txt(480, 50, "纯 RL", "an")
@@ -305,7 +305,7 @@ def gen_dspark_draft_parallel() -> None:
 def gen_v1_bbpe_pipeline() -> None:
     w, h = 920, 100
     lbs = ["原始语料", "去重", "过滤", "重混", "BBPE 训练 / 预训练"]
-    s = txt(460, 22, "V1 数据管线", "t")
+    s = txt(460, 22, "V1 数据流程", "t")
     xs = [80, 220, 360, 500, 680, 840]
     for i in range(len(lbs)):
         x = 80 + i * 190

@@ -1,6 +1,6 @@
-# DeepSeek Mechanism Atlas · 书籍镜像
+# DeepSeek 技术报告
 
-> **《ds-技术报告》** — [`deepseek-mechanism-atlas`](https://github.com/fooSynaptic/deepseek-mechanism-atlas) 的 mdBook 镜像（由 `docs/` 生成，勿手改）。  
+> **《ds-技术报告》** — `deepseek-mechanism-atlas` 文档的书籍式读本（**独立目录**，与仓库 `docs/` 并行）。  
 > [中文导读](./00-前言/02-中文导读.md) · **从这里开始**：[01 版本演进总览](./01-总览/01-版本演进总览.md)（全书主线；其余章节经该文内链展开）
 
 ---
@@ -38,7 +38,7 @@
 | [02 R1](./03-后训练与R1/02-R1.md) | V3-Base + RLVR |
 | [03 RL 笔记索引](./03-后训练与R1/03-RL笔记索引.md) | 后训练延伸阅读 |
 | [04 GRPO 长程局限](./03-后训练与R1/04-GRPO长程局限.md) | 社区讨论附录 |
-| [05 R1 训练管线](./03-后训练与R1/05-R1训练管线.md) | 四阶段 Dev-1→R1（参考材料副本） |
+| [05 R1 训练 pipeline](./03-后训练与R1/05-R1训练pipeline.md) | 四阶段 Dev-1→R1（参考材料副本） |
 
 ### 04 版本代际
 
@@ -99,7 +99,7 @@
 |----|------|
 | [01 开发索引](./09-附录/01-开发索引.md) | 源路径与构建（**非阅读入口**） |
 | [02 文档系列结构审查](./09-附录/02-文档系列结构审查.md) | 双向引用、导航、SVG 复用审计 |
-| [material/](./09-附录/material/README.md) | 补充参考材料（本仓内）（R1 管线、Engram 导读、V1 Wiki 等） |
+| [material/](./09-附录/material/README.md) | 补充参考材料（本仓内）（R1 pipeline、Engram 导读、V1 Wiki 等） |
 
 ---
 

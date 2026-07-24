@@ -12,8 +12,8 @@ If this atlas helps you, please **Star** to bookmark for later.
 
 ## Paper catalog
 
-| Topic | Document | Keywords |
-|-------|----------|----------|
+| Series | Article | Keywords |
+|--------|---------|----------|
 | **V1** | [DeepSeek-LLM](docs/versions/v1.md) | scaling laws, dense base |
 | **V2** | [DeepSeek-V2](docs/versions/v2.md) | MLA, DeepSeekMoE, 128K |
 | **V3** | [DeepSeek-V3](docs/versions/v3.md) | 671B MoE, MTP, aux-loss-free |

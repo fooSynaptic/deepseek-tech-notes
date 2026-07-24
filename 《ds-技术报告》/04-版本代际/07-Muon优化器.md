@@ -3,6 +3,13 @@
 > [← 中文导读](../00-前言/02-中文导读.md) · [← 仓库首页（EN）](https://github.com/fooSynaptic/deepseek-mechanism-atlas) · [← 演进总览 §3.7](../01-总览/01-版本演进总览.md#37-deepseek-v4) · [V4 梗概](03-V4.md) · [CSA/HCA](05-CSA-HCA混合压缩注意力.md) · [mHC](04-mHC流形约束超连接.md) · [Hash MoE + FP4](06-Hash-MoE-FP4.md)
 > **论文**：[DeepSeek-V4 arXiv:2606.19348](https://arxiv.org/abs/2606.19348) · **Algorithm 1** · **§2.4 Muon Optimizer** · **§3.4.1 Efficient Implementation of Muon**
 
+## 核心结论摘要
+
+- **Muon** 用矩阵正交化更新替代大部分 AdamW，加速收敛。
+- V4 训练侧优化器替换，与架构改动同期引入。
+- 面向大矩阵参数（attention/FFN 投影）的高效二阶风格更新。
+- 与 MoE/注意力结构改动并列，属训练 recipe 翻新。
+
 ---
 
 ## 一句话

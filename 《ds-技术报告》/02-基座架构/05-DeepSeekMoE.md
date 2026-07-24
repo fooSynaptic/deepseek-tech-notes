@@ -5,6 +5,13 @@
 
 <a id="deepseek-moe"></a>
 
+## 核心结论摘要
+
+- **DeepSeekMoE**：细粒度 **routed experts + shared experts** 并行残差。
+- V2 首发（160 routed + 2 shared，6 act）；V3 旗舰化（256 routed，8 act）。
+- Shared expert 捕获共性，routed 捕获专化，降低每 token 激活参数量。
+- 下游 V3 aux-loss-free 路由与 V4 Hash MoE 均在此基础上演进。
+
 ---
 
 ## 一句话

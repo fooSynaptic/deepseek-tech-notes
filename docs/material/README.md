@@ -6,7 +6,7 @@
 
 | 子目录 | 内容 |
 |--------|------|
-| [papers/deepseek-r1/](./papers/deepseek-r1/training-pipeline.md) | R1 四阶段训练管线 |
+| [papers/deepseek-r1/](./papers/deepseek-r1/training-pipeline.md) | R1 四阶段训练 pipeline |
 | [papers/engram/](./papers/engram/engram-series-overview.md) | Engram 系列深度导读 |
 | `meta/` | 三线导读维护约定 |
 

@@ -13,33 +13,11 @@
 
 ---
 
-## 公式图解预览
-
-[版本演进全图](../diagrams/deepseek-version-lineage.svg) · [演进总览](reports/deepseek-version-lineage-20260625.md)
-
-<img src="../diagrams/mla-forward-flow.svg" alt="MLA 前向计算流程：KV latent 压缩与解耦 RoPE" width="920"/>
-
-[MLA 前向流程](../diagrams/mla-forward-flow.svg) · [MLA 详解](versions/mla-latent-attention.md)
-
-<img src="../diagrams/grpo-vs-ppo.svg" alt="PPO vs GRPO：RLHF 神经 RM + Critic 与 RLVR 验证器 + 组内 baseline 对比" width="920"/>
-
-[GRPO vs PPO](../diagrams/grpo-vs-ppo.svg) · [R1](versions/r1.md) · [RLVR](versions/rlvr.md)
-
-<img src="../diagrams/mtp-fusion-scheme.svg" alt="MTP 融合：主网单步 1 次前向，MTP 链补 draft，无需 K 遍完整前向" width="920"/>
-
-[MTP 融合](../diagrams/mtp-fusion-scheme.svg) · [DSpark 投机解码](versions/dspark-speculative-decoding.md)
-
-<img src="../diagrams/dspark-speculative.svg" alt="DSpark 投机解码：半自回归 draft + 置信度调度验证" width="920"/>
-
-[DSpark 投机解码](../diagrams/dspark-speculative.svg) · [投机解码专文](versions/dspark-speculative-decoding.md)
-
----
-
 ## 论文目录
 
 | 主题 | 一句话 |
 |------|--------|
-| [**V1**](versions/v1.md) | DeepSeek-LLM 完整中文译文 |
+| [**V1**](versions/v1.md) | DeepSeek-LLM 机制总结 |
 | [**V1 BBPE**](versions/v1-bbpe-tokenizer.md) | Byte-level BPE 词表与预分词 |
 | [**V2**](versions/v2.md) | 236B/21B；MLA + DeepSeekMoE 首次引入 |
 | [**V3**](versions/v3.md) | 671B MoE + MLA 开源旗舰基座 |

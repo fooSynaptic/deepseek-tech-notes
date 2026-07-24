@@ -19,7 +19,7 @@
 | 2025 | **R1-0528** | 后训练小升级，对标 o3 / Gemini 2.5 Pro 时期 |
 | 2025 | **V3.1**、**V3.1-Terminus** | Hybrid；Terminus = V3.1 收尾 checkpoint |
 | 2025-09 | **V3.2-Exp** | Terminus + **DSA** 续训；benchmark 平淡，**铺生态** |
-| 2025-11-27 | **DeepSeekMath V2** | 数学 PoC；自验证管线 |
+| 2025-11-27 | **DeepSeekMath V2** | 数学 PoC；自验证 pipeline |
 | 2025-12-01 | **V3.2** | 旗舰正式版；架构同 Exp |
 | 2025-12-31 | **mHC** 论文 | 残差 Hyper-Connection 研究（附录 §8） |
 
@@ -35,7 +35,7 @@
 
 | 形态 | 机制 | 代表 |
 |------|------|------|
-| **Dedicated reasoning** | 独立 checkpoint / 管线 | DeepSeek **R1** |
+| **Dedicated reasoning** | 独立 checkpoint / pipeline | DeepSeek **R1** |
 | **Hybrid** | 模板或系统提示切换模式 | 初版 **Qwen3**、**gpt-oss**、**V3.1 / V3.2** |
 | **Hybrid → 拆分** | 分开发布 instruct / reasoning 版 | Qwen 后续路线 |
 
@@ -47,7 +47,7 @@
 | V3.1 / V3.2 | → **Hybrid** | 单模型覆盖 chat + reasoning；R1 像 **试验床**，V3.2 面向 **通用旗舰** |
 | 未来（推测） | 可能仍有 **R2** 专用版 | 文章未证实 |
 
-> 原文 Figure 4–5：R1 训练管线、2025 年 reasoning/hybrid 模型时间线。
+> 原文 Figure 4–5：R1 训练 pipeline、2025 年 reasoning/hybrid 模型时间线。
 
 ---
 
@@ -71,7 +71,7 @@
 
 **要点**：R1 **架构同 V3**；差异在 **RLVR**（Reinforcement Learning with Verifiable Rewards）：从可符号/程序验证的任务（数学、代码等）学习。**GRPO** = 无 critic 的 PPO 简化版；RLVR+GRPO **再省掉 reward model**，直接用计算器/编译器等 **可验证奖励**。
 
-### 表 3-2：LLM 强化学习管线对比
+### 表 3-2：LLM 强化学习 pipeline 对比
 
 | | RLHF + **PPO** | **GRPO** | **RLVR + GRPO** |
 |--|----------------|----------|-----------------|
@@ -86,7 +86,7 @@
 |----|------|
 | 定位 | 官方称 **minor version upgrade** |
 | 架构 | 同 V3/R1 |
-| 提升来源 | 后训练管线优化（细节未公开）；托管版或更长推理 |
+| 提升来源 | 后训练 pipeline 优化（细节未公开）；托管版或更长推理 |
 
 ### 3.4 DeepSeek V3.1 Hybrid Reasoning
 
@@ -190,7 +190,7 @@ $$
 
 ## 6. DeepSeek V3.2
 
-**要点**：对标 GPT-5 / Gemini 3 Pro 级开源旗舰；**架构与 V3.2-Exp 完全相同**（MoE + MLA + **DSA**）；差异在 **训练与后训练**。数学采用 Math V2 管线；强调 **工具 / agent**；训练芯片叙述为 **回归 NVIDIA**。
+**要点**：对标 GPT-5 / Gemini 3 Pro 级开源旗舰；**架构与 V3.2-Exp 完全相同**（MoE + MLA + **DSA**）；差异在 **训练与后训练**。数学采用 Math V2 pipeline；强调 **工具 / agent**；训练芯片叙述为 **回归 NVIDIA**。
 
 ### 6.1 Architecture
 
@@ -211,7 +211,7 @@ $$
 | Verifier / outcome | ✅（数学/代码） | ✅ rule-based outcome（reasoning/agent） |
 | Length penalty | — | ✅（**agent** 任务） |
 | Generative RM + rubric | — | ✅（**general** 无符号验证任务） |
-| Math V2 管线 | — | ✅ 并入数据集与奖励 |
+| Math V2 pipeline | — | ✅ 并入数据集与奖励 |
 
 **归纳**：V3.2 = **RLVR（可验证域）+ 生成式 RM（开放域）** 混合，而非 R1 式纯 verifier RLVR。
 
@@ -263,7 +263,7 @@ $$
 | 1 | V3.2 架构与 V3 以来一脉相承 |
 | 2 | **主要结构变化** = V3.2-Exp 的 **稀疏注意力 DSA** |
 | 3 | 数学提升 = 吸收 **DeepSeekMath V2 自验证** |
-| 4 | 训练管线含 **GRPO 稳定性** 等多项更新 |
+| 4 | 训练 pipeline 含 **GRPO 稳定性** 等多项更新 |
 | 5 | 文章 **未展开**：蒸馏、长上下文训练、工具集成（类 gpt-oss）等 |
 
 ---

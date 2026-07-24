@@ -255,7 +255,7 @@ $$
 
 ## 9. 训练与在线引擎
 
-> **范畴**：**DSpark 线上推理**（§8、§10）不改 V4 基座权重，是纯 decode 加速栈。**本节「训练」**指 [DeepSpec](https://github.com/deepseek-ai/DeepSpec) 里 **外挂 draft 模块**（DSpark / DFlash / Eagle3）的 **训练与蒸馏管线**；**「在线引擎」**指该 draft 接入 V4 预览引擎后的调度与 kernel 集成。二者都不是 V3/V4 **主模型预训练**。
+> **范畴**：**DSpark 线上推理**（§8、§10）不改 V4 基座权重，是纯 decode 加速栈。**本节「训练」**指 [DeepSpec](https://github.com/deepseek-ai/DeepSpec) 里 **外挂 draft 模块**（DSpark / DFlash / Eagle3）的 **训练与蒸馏 pipeline**；**「在线引擎」**指该 draft 接入 V4 预览引擎后的调度与 kernel 集成。二者都不是 V3/V4 **主模型预训练**。
 
 > **答疑**：[酱紫君解读：draft 训练 vs 主模型 fine-tune](../reports/zhihu-jiangzijun-dspark-highlights-20260627.md#deepspec-draft-训练-vs-主模型-fine-tune)
 

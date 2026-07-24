@@ -4,6 +4,13 @@
 > **论文**：[arXiv:2606.19348](https://arxiv.org/abs/2606.19348) §3.5.1 — *DeepSeek-V4*
 > **演进总览 §5.3** 只保留梗概；**layout 细节以本文为准**。
 
+## 核心结论摘要
+
+- V4 KV 分为 **Classical + State 双池**，不再单一 MLA latent。
+- 需同时管理 CSA/HCA 压缩 entry、SWA、Indexer KV、Tail buffer。
+- 1M context 下 FLOPs 与累计 cache 相对稠密 attention 大幅节省。
+- 推理引擎需围绕异构 cache 重新设计内存层级。
+
 ---
 
 ## 一句话

@@ -3,6 +3,13 @@
 > [← 中文导读](../00-前言/02-中文导读.md) · [← 仓库首页（EN）](https://github.com/fooSynaptic/deepseek-mechanism-atlas) · [← 演进总览 §3.3](../01-总览/01-版本演进总览.md#33-deepseek-v3) · [← MoE 线导读](../01-总览/07-MoE线导读.md) · [← DeepSeekMoE 上游](05-DeepSeekMoE.md) · [← V3 梗概](01-V3基座.md) · [版本目录](../01-总览/02-版本梗概索引.md)
 > **论文**：[DeepSeek-V3 arXiv:2412.19437](https://arxiv.org/abs/2412.19437) §2.1 · [Megatron MoE aux loss free](https://github.com/NVIDIA/Megatron-LM/blob/main/megatron/core/transformer/moe/README.md)
 
+## 核心结论摘要
+
+- V3 用 **动态 expert bias** 做负载均衡，**去掉 aux loss 主均衡**。
+- Sigmoid 路由替代 V2 softmax 系；Table 5 给出 ablation。
+- 避免 aux loss 与主 loss 权衡，简化 MoE 训练调参。
+- V4 Hash MoE 为更激进的下游路由方案。
+
 ---
 
 ## 一句话

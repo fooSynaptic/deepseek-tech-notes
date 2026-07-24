@@ -5,6 +5,13 @@
 > **部署参考**：[Together.ai — Prefix caching becomes a storage policy](https://www.together.ai/blog/serving-deepseek-v4-why-million-token-context-is-an-inference-systems-problem#prefix-caching-becomes-a-storage-policy)
 > **演进总览 §5.3** 只保留梗概；**prefix 三档策略以本文为准**。
 
+## 核心结论摘要
+
+- 将 CSA/HCA 历史块 **落盘**，配合 **SWA 三档策略** 管理长前缀。
+- 面向 Agentic Coding 等超长 prefix 场景（100K–1M token）。
+- 与内存侧 HiSparse、算法侧 CSA/HCA 协同。
+- 见 V4 论文 §3.5.2 与演进总览 §5.3。
+
 ---
 
 ## 一句话

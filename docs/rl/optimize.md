@@ -2,7 +2,7 @@
 
 > [← 中文导读](../README.md) · [← 仓库首页（EN）](../../README.md) · [← RL 笔记索引](./README.md) · [← RLVR · GRPO](../versions/rlvr.md#grpo) · [← 演进总览 §3.4 R1](../reports/deepseek-version-lineage-20260625.md#34-deepseek-r1) · [书中对应](../../《ds-技术报告》/03-后训练与R1/04-GRPO长程局限.md)
 
-**作者**：划水的青蛙 · [知乎原文](https://www.zhihu.com/question/2052108642686706557/answer/2052367150749427260)  
+**作者**：划水的青蛙 · [知乎原文](https://www.zhihu.com/question/2052108642686706557/answer/2052367150749427260) 
 **性质**：社区讨论整理；非 DeepSeek 官方文档。商业转载请联系原作者。
 
 ---
@@ -101,7 +101,7 @@ R1 的 [RLVR + GRPO](../versions/rlvr.md) 针对的是 **同一 prompt、$G$ 条
 | 本地 | 关联 |
 |------|------|
 | [RLVR · GRPO](../versions/rlvr.md#grpo) | R1 **短程可验证** 场景下 GRPO 怎么工作 |
-| [R1 训练管线](../material/papers/deepseek-r1/training-pipeline.md) | 四阶段 + R1-Zero；**非** 长程 Agent 专文 |
+| [R1 训练 pipeline](../material/papers/deepseek-r1/training-pipeline.md) | 四阶段 + R1-Zero；**非** 长程 Agent 专文 |
 | [Raschka §RLVR/GRPO](../reports/raschka-technical-deepseek-v3-v32-highlights.md#rlvr--grpo-要点326) | V3.2 如何在 GRPO 上叠 **生成式 RM / 混合奖励** |
 
 ---
